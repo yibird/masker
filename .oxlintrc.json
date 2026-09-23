@@ -1,0 +1,62 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "import"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "warn",
+    "style": "off",
+    "restriction": "off",
+    "pedantic": "off"
+  },
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "eqeqeq": ["error", "smart"],
+    "prefer-const": "error",
+    "no-var": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "eslint/capitalized-comments": "off",
+    "eslint/func-style": "off",
+    "eslint/id-length": "off",
+    "eslint/init-declarations": "off",
+    "eslint/max-params": "off",
+    "eslint/max-statements": "off",
+    "eslint/no-magic-numbers": "off",
+    "eslint/no-ternary": "off",
+    "eslint/one-var": "off",
+    "eslint/sort-imports": "off",
+    "eslint/sort-keys": "off",
+    "unicorn/no-null": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/switch-case-braces": "off",
+    "unicorn/prefer-spread": "off",
+    "unicorn/number-literal-case": "off",
+    "unicorn/no-nested-ternary": "off",
+    "import/no-named-export": "off",
+    "import/exports-last": "off",
+    "import/group-exports": "off",
+    "import/no-unassigned-import": "off"
+  },
+  "ignorePatterns": [
+    "dist/**",
+    "coverage/**",
+    "node_modules/**",
+    "benchmark/**",
+    "docs/**",
+    "package-lock.json"
+  ],
+  "overrides": [
+    {
+      "files": ["test/**/*.ts"],
+      "rules": {
+        "vitest/prefer-expect-assertions": "off",
+        "vitest/prefer-describe-function-title": "off",
+        "vitest/no-importing-vitest-globals": "off",
+        "vitest/prefer-to-be-truthy": "off",
+        "vitest/prefer-to-be-falsy": "off",
+        "unicorn/no-new-array": "off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 170 1050 900">
+  <defs>
+    <linearGradient id="base" x1="125" y1="190" x2="1130" y2="1040" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22B8F2"/>
+      <stop offset="0.34" stop-color="#167DF4"/>
+      <stop offset="0.67" stop-color="#5B45F0"/>
+      <stop offset="1" stop-color="#7A3BEA"/>
+    </linearGradient>
+
+    <linearGradient id="bridge" x1="386" y1="430" x2="865" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#123CE7"/>
+      <stop offset="0.5" stop-color="#343DEB"/>
+      <stop offset="1" stop-color="#7447F1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main M silhouette, traced from the generated artwork -->
+  <path
+    d="
+      M 148 223
+      C 160 207, 177 197, 191 195
+      C 210 191, 231 193, 249 197
+      L 628 429
+      L 1003 199
+      C 1021 195, 1040 192, 1048 193
+      C 1070 197, 1094 211, 1110 229
+      C 1122 243, 1128 259, 1128 274
+      L 1129 950
+      C 1129 973, 1121 995, 1109 1003
+      C 1098 1017, 1081 1029, 1069 1033
+      C 1053 1038, 1037 1040, 1022 1037
+      L 872 946
+      C 866 938, 863 929, 863 916
+      L 865 632
+      L 653 763
+      C 641 770, 628 768, 615 766
+      L 389 632
+      L 390 922
+      C 390 935, 385 947, 383 945
+      C 377 958, 366 965, 359 969
+      L 239 1037
+      C 222 1040, 205 1040, 192 1037
+      C 171 1029, 148 1011, 139 994
+      C 129 981, 125 968, 125 950
+      L 124 483
+      L 125 275
+      C 126 254, 132 239, 148 223
+      Z"
+    fill="url(#base)"
+  />
+
+  <!-- Central overlapping ribbon / fold -->
+  <path
+    d="
+      M 386 556
+      L 625 428
+      L 865 556
+      L 865 629
+      L 665 756
+      C 652 764, 639 766, 625 766
+      C 610 766, 598 762, 585 756
+      L 386 629
+      C 378 624, 374 614, 374 603
+      C 374 584, 379 568, 386 556
+      Z"
+    fill="url(#bridge)"
+  />
+</svg>
