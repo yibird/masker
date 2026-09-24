@@ -62,17 +62,21 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "prepublishOnly": "npm run typecheck && npm run test && npm run build",
-    "prepare": "husky"
+    "prepare": "simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx --no -- commitlint --edit $1"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
     "@types/node": "^26.6.2",
     "@vitest/coverage-v8": "^5.0.1",
-    "husky": "^9.1.7",
     "lint-staged": "^17.5.1",
     "oxfmt": "^0.70.0",
     "oxlint": "^1.85.0",
+    "simple-git-hooks": "^2.14.0",
     "tsdown": "^0.23.0",
     "typescript": "^7.0.2",
     "vite": "^8.3.0",

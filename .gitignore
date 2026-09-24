@@ -60,9 +60,6 @@ benchmark/*.csv
 benchmark/*.json
 !benchmark/package.json
 
-# Husky (keep hooks source in .husky/, ignore runtime)
-.husky/_/
-
 # Misc
 *.pid
 *.seed
