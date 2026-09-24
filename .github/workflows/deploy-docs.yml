@@ -24,13 +24,15 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # tsdown / vitest 5 / lint-staged / commitlint require Node 22.22+ or 24
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
         run: npm ci
         env:
-          SIMPLE_GIT_HOOKS: '0'
+          # simple-git-hooks skip flag for CI
+          SKIP_SIMPLE_GIT_HOOKS: '1'
 
       - name: Build docs
         run: npm run docs:build
