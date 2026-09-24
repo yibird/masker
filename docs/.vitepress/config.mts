@@ -1,5 +1,6 @@
 import { defineConfig, type DefaultTheme } from 'vitepress';
 import { fileURLToPath, URL } from 'node:url';
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons';
 
 const repo = 'https://github.com/masker-js/masker';
 
@@ -206,9 +207,17 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
 
+  markdown: {
+    config(md) {
+      md.use(groupIconMdPlugin);
+    },
+  },
+
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
     ['meta', { name: 'theme-color', content: '#646cff' }],
+    ['meta', { name: 'author', content: 'zchengfeng' }],
+    ['meta', { name: 'email', content: '2684837849@qq.com' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'masker — data masking toolkit' }],
     [
@@ -232,7 +241,7 @@ export default defineConfig({
         outline: { level: [2, 3], label: '本页目录' },
         footer: {
           message: 'Released under the MIT License.',
-          copyright: 'Copyright © masker contributors',
+          copyright: 'Copyright © zchengfeng <2684837849@qq.com>',
         },
         editLink: { pattern: `${repo}/edit/main/docs/:path`, text: '编辑此页' },
         lastUpdatedText: '最后更新',
@@ -255,7 +264,7 @@ export default defineConfig({
         outline: { level: [2, 3], label: 'On this page' },
         footer: {
           message: 'Released under the MIT License.',
-          copyright: 'Copyright © masker contributors',
+          copyright: 'Copyright © zchengfeng <2684837849@qq.com>',
         },
         editLink: { pattern: `${repo}/edit/main/docs/:path`, text: 'Edit this page' },
         lastUpdatedText: 'Last updated',
@@ -273,6 +282,7 @@ export default defineConfig({
   vite: {
     // Single logo source: serve project `assets/` as site public root (`/logo.svg`).
     publicDir: fileURLToPath(new URL('../../assets', import.meta.url)),
+    plugins: [groupIconVitePlugin()],
     resolve: {
       alias: {
         masker: fileURLToPath(new URL('../../src/index.ts', import.meta.url)),

@@ -1,0 +1,34 @@
+/**
+ * Dark mode switch — circular view-transition from click point
+ * Adapted from https://note.weizwz.com/vitepress/basic/dark-animation
+ */
+
+::view-transition-old(*) {
+  animation: none;
+}
+
+::view-transition-new(*) {
+  animation: globalDark 0.7s ease-in;
+}
+
+@keyframes globalDark {
+  from {
+    clip-path: circle(0% at var(--darkX, 50%) var(--darkY, 50%));
+  }
+
+  to {
+    clip-path: circle(100% at var(--darkX, 50%) var(--darkY, 50%));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none;
+  }
+}
+
+/* slightly dim images in dark mode */
+.dark img {
+  filter: brightness(0.85);
+}

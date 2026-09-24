@@ -1,0 +1,118 @@
+/**
+ * Code block polish — mac window dots + spacing
+ * Adapted from https://note.weizwz.com/vitepress/basic/code-block (plain CSS)
+ */
+
+:root {
+  --mac-window-red: #ff5f57;
+  --mac-window-yellow: #febc2e;
+  --mac-window-green: #28c840;
+}
+
+.vp-doc {
+  div[class*='language-'],
+  .vp-code-group,
+  .vp-code-block-title {
+    --code-red: var(--mac-window-red);
+    --code-yellow: var(--mac-window-yellow);
+    --code-green: var(--mac-window-green);
+  }
+}
+
+/* inline code */
+.vp-doc :not(pre) > code {
+  background-color: rgba(100, 108, 255, 0.1);
+}
+
+/* code block shell: top padding + traffic lights */
+.vp-doc *:not(.vp-code-block-title):not(.blocks) > div[class*='language-'],
+.vp-doc .vp-code-block-title .vp-code-block-title-bar {
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.vp-doc *:not(.vp-code-block-title):not(.blocks) > div[class*='language-']::before,
+.vp-doc .vp-code-block-title .vp-code-block-title-bar::before {
+  content: '';
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--code-red);
+  box-shadow:
+    20px 0 0 var(--code-yellow),
+    40px 0 0 var(--code-green);
+  pointer-events: none;
+}
+
+/* line numbers: shift down under dots, rebuild divider */
+.vp-doc *:not(.vp-code-block-title):not(.blocks) > div[class*='language-'] .line-numbers-wrapper {
+  border-right: 0;
+  padding-top: 1.5rem;
+}
+
+.vp-doc
+  *:not(.vp-code-block-title):not(.blocks)
+  > div[class*='language-']
+  .line-numbers-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  height: calc(100% - 2.25rem);
+  border-right: 1px solid var(--vp-code-block-divider-color);
+}
+
+/* multi-file code groups: dots on tab bar, not on each pane */
+.vp-doc .vp-code-group .tabs {
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.vp-doc .vp-code-group .tabs::before {
+  content: '';
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--code-red);
+  box-shadow:
+    20px 0 0 var(--code-yellow),
+    40px 0 0 var(--code-green);
+  pointer-events: none;
+}
+
+.vp-doc .vp-code-group div[class*='language-'] {
+  padding-top: 0;
+  box-shadow: none;
+}
+
+.vp-doc .vp-code-group div[class*='language-']::before {
+  display: none;
+}
+
+.vp-doc .vp-code-group div[class*='language-'] .line-numbers-wrapper {
+  padding-top: 1.25rem;
+}
+
+.vp-doc .vp-code-group div[class*='language-'] .line-numbers-wrapper::after {
+  top: 1.25rem;
+  height: calc(100% - 2rem);
+}
+
+/* file-title bar from group-icons (when present) */
+.vp-doc .vp-code-block-title {
+  border-radius: 8px 8px 0 0;
+}
+
+.vp-doc .vp-code-block-title .vp-code-block-title-bar {
+  display: flex;
+  align-items: center;
+  min-height: 2.5rem;
+}

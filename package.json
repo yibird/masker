@@ -71,6 +71,7 @@
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
+    "@types/dom-view-transitions": "^1.0.6",
     "@types/node": "^26.6.2",
     "@vitest/coverage-v8": "^5.0.1",
     "lint-staged": "^17.5.1",
@@ -81,6 +82,7 @@
     "typescript": "^7.0.2",
     "vite": "^6.4.3",
     "vitepress": "^1.6.4",
+    "vitepress-plugin-group-icons": "^1.7.6",
     "vitest": "^5.0.1"
   }
 }

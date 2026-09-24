@@ -1,15 +1,18 @@
-import { h } from 'vue';
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
+import Layout from './Layout.vue';
 import MaskExample from './components/MaskExample.vue';
 import MaskPair from './components/MaskPair.vue';
 import HomeDemo from './components/HomeDemo.vue';
 import Playground from './components/Playground.vue';
+import 'virtual:group-icons.css';
+import './style/code.css';
+import './style/dark.css';
 import './custom.css';
 
 export default {
   extends: DefaultTheme,
-  Layout: () => h(DefaultTheme.Layout, null, { 'home-hero-info-before': () => h(HomeBadge) }),
+  Layout,
   enhanceApp({ app }) {
     app.component('MaskExample', MaskExample);
     app.component('MaskPair', MaskPair);
@@ -17,9 +20,3 @@ export default {
     app.component('Playground', Playground);
   },
 } satisfies Theme;
-
-const HomeBadge = {
-  render() {
-    return h('div', { class: 'home-badge' }, 'Zero runtime deps · ESM · Node & Bun');
-  },
-};
