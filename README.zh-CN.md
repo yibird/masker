@@ -16,7 +16,7 @@
 - Schema / 路径脱敏，规则可预编译，适合热路径 Logger
 - 绝不修改输入对象（copy-on-write）
 
-**文档站：** [https://yibird.github.io/masker/](https://yibird.github.io/masker/) · 源码在 [`docs/`](./docs/)
+**文档站：** <a href="https://yibird.github.io/masker/" target="_blank" rel="noopener noreferrer">https://yibird.github.io/masker/</a>
 
 本地预览：`npm run docs:dev` · 构建：`npm run docs:build`
 

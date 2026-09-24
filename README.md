@@ -16,7 +16,7 @@ Lightweight, fast, **type-safe** data masking for Node.js, Bun, and modern JS ru
 - Schema/path masking with precompiled rules for hot logger paths
 - Never mutates input objects (copy-on-write)
 
-**Documentation:** [https://yibird.github.io/masker/](https://yibird.github.io/masker/) · sources under [`docs/`](./docs/)
+**Documentation:** <a href="https://yibird.github.io/masker/" target="_blank" rel="noopener noreferrer">https://yibird.github.io/masker/</a>
 
 Local preview: `npm run docs:dev` · build: `npm run docs:build`
 
