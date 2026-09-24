@@ -16,7 +16,9 @@
 - Schema / 路径脱敏，规则可预编译，适合热路径 Logger
 - 绝不修改输入对象（copy-on-write）
 
-**文档站（VitePress）：** 执行 `npm run docs:dev` 或 `npm run docs:build` — 源码在 [`docs/`](./docs/)。
+**文档站：** [https://yibird.github.io/masker/](https://yibird.github.io/masker/) · 源码在 [`docs/`](./docs/)
+
+本地预览：`npm run docs:dev` · 构建：`npm run docs:build`
 
 ```ts
 import { maskEmail, maskPhone, maskGeneric } from 'masker';

@@ -16,7 +16,9 @@ Lightweight, fast, **type-safe** data masking for Node.js, Bun, and modern JS ru
 - Schema/path masking with precompiled rules for hot logger paths
 - Never mutates input objects (copy-on-write)
 
-**Documentation site (VitePress):** run `npm run docs:dev` or `npm run docs:build` — sources live under [`docs/`](./docs/).
+**Documentation:** [https://yibird.github.io/masker/](https://yibird.github.io/masker/) · sources under [`docs/`](./docs/)
+
+Local preview: `npm run docs:dev` · build: `npm run docs:build`
 
 ```ts
 import { maskEmail, maskPhone, maskGeneric } from 'masker';
