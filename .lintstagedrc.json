@@ -1,5 +1,5 @@
 {
-  "*.{js,mjs,cjs,ts,mts,cts}": ["oxlint", "oxfmt --write"],
+  "*.{js,mjs,cjs,ts,mts,cts}": ["oxlint --no-error-on-unmatched-pattern", "oxfmt --write"],
   "*.{json,jsonc,md,yml,yaml}": ["oxfmt --write"],
   "*.vue": ["oxfmt --write"]
 }

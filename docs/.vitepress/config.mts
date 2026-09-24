@@ -200,6 +200,9 @@ export default defineConfig({
   description:
     'Lightweight, type-safe data masking for Node.js and Bun — protect PII without sacrificing DX.',
   lang: 'zh-CN',
+  // GitHub Pages project site: https://yibird.github.io/masker/
+  // Override with DOCS_BASE=/ for root or custom domain.
+  base: process.env.DOCS_BASE || '/',
   cleanUrls: true,
   lastUpdated: true,
 
